@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import Link from "next/link";
 import { useEffect, useRef, useState } from 'react';
 
-const Hero = () => {
+const Hero = ({ openContact }) => {
     const [loading, isLoading] = useState(true)
     const [isMobile, setIsMobile] = useState(false);
 
@@ -251,7 +251,7 @@ const Hero = () => {
 
                     <div className="hero-actions">
                         <div className="hero-buttons" ref={buttonsContainerRef}>
-                            <button className="available-for-btn">
+                            <button className="available-for-btn" onClick={openContact}>
                                 <div className="available-circle">
                                     <div className="available-dot"></div>
                                     <div className="available-outline"></div>

@@ -1,5 +1,9 @@
 
-const Cta = () => {
+interface CtaProps {
+    openContact: () => void;
+}
+
+const Cta = ({ openContact }: CtaProps) => {
     return (
         <section className="cta">
             <div className="cta-wrapper">
@@ -17,8 +21,8 @@ const Cta = () => {
                 </div>
 
                 <div className="cta-buttons">
-                    <button className="cta-section-btn">  <span>Book A Free Call</span>  </button>
-                    <button className="cta-section-btn">  <span>Contact Me</span>  </button>
+                    {/* <button className="cta-section-btn">  <span>Book A Free Call</span>  </button> */}
+                    <button className="cta-section-btn" onClick={openContact}>  <span>Contact Me</span>  </button>
                 </div>
             </div>
         </section>

@@ -9,7 +9,6 @@ import './globals.css'
 export default function Home() {
   const [loading, isLoading] = useState(true)
   useEffect(() => {
-    // Blur effect
     setTimeout(() => {
       const mainContent = document.getElementById('main-content')
       if (mainContent) {

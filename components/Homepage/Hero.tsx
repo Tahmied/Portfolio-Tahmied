@@ -1,13 +1,19 @@
-
 'use client'
 import { Highlighter } from "@/components/ui/highlighter";
+import { gsap } from 'gsap';
 import Link from "next/link";
-import { useEffect, useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
     const [loading, isLoading] = useState(true)
     const [isMobile, setIsMobile] = useState(false);
+
+    // Refs for GSAP animations
+    const heroRef = useRef(null);
+    const titleRef = useRef(null);
+    const descriptionRef = useRef(null);
+    const buttonsContainerRef = useRef(null);
+    const contactsRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -21,21 +27,189 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
-
         setTimeout(() => {
             isLoading(false)
         }, 500)
-
     }, [])
+
+    // Set initial styles immediately
+    useEffect(() => {
+        // Set initial invisible state for animation elements
+        if (titleRef.current) {
+            gsap.set(titleRef.current, { opacity: 0, y: 60, filter: "blur(10px)" });
+        }
+        if (descriptionRef.current) {
+            gsap.set(descriptionRef.current, { opacity: 0, x: -50 });
+        }
+        if (buttonsContainerRef.current) {
+            gsap.set(buttonsContainerRef.current, { opacity: 0, y: 40 });
+        }
+        const contactButtons = contactsRef.current?.querySelectorAll('.links-button');
+        if (contactButtons) {
+            gsap.set(contactButtons, { opacity: 0, y: 30 });
+        }
+    }, []);
+
+    // GSAP Animations
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            // Main timeline
+            const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+            // Title animation - fade in from bottom with blur
+            tl.to(titleRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    duration: 1,
+                    ease: "power3.out"
+                },
+                0.2
+            );
+
+            // Description animation - slide from left
+            tl.to(descriptionRef.current,
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.8,
+                },
+                0.6
+            );
+
+            // Both buttons container - slide up from bottom together
+            tl.to(buttonsContainerRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "back.out(1.2)"
+                },
+                1
+            );
+
+            // Contact icons - smooth slide up one by one
+            const contactButtons = contactsRef.current?.querySelectorAll('.links-button');
+            if (contactButtons) {
+                contactButtons.forEach((btn, index) => {
+                    tl.to(btn,
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        },
+                        1.2 + (index * 0.1) // Stagger effect
+                    );
+                });
+            }
+
+            // Gentle pulse on the available dot
+            const availableDot = buttonsContainerRef.current?.querySelector('.available-dot');
+            if (availableDot) {
+                gsap.to(availableDot, {
+                    scale: 1.2,
+                    opacity: 0.8,
+                    duration: 1.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+            }
+
+        }, heroRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    // Smooth hover animations
+    useEffect(() => {
+        const resumeBtn = document.querySelector('.projects-button-container');
+
+        if (resumeBtn) {
+            const handleMouseEnter = () => {
+                gsap.to(resumeBtn, {
+                    y: -5,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            };
+
+            const handleMouseLeave = () => {
+                gsap.to(resumeBtn, {
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            };
+
+            resumeBtn.addEventListener('mouseenter', handleMouseEnter);
+            resumeBtn.addEventListener('mouseleave', handleMouseLeave);
+
+            return () => {
+                resumeBtn.removeEventListener('mouseenter', handleMouseEnter);
+                resumeBtn.removeEventListener('mouseleave', handleMouseLeave);
+            };
+        }
+    }, []);
+
+    // Contact icons hover - smooth scale and lift
+    useEffect(() => {
+        const contactButtons = document.querySelectorAll('.links-button');
+
+        contactButtons.forEach(btn => {
+            const handleMouseEnter = () => {
+                gsap.to(btn, {
+                    scale: 1.15,
+                    y: -5,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+
+                // Rotate the SVG inside
+                const svg = btn.querySelector('svg');
+                if (svg) {
+                    gsap.to(svg, {
+                        rotation: 5,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                }
+            };
+
+            const handleMouseLeave = () => {
+                gsap.to(btn, {
+                    scale: 1,
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+
+                const svg = btn.querySelector('svg');
+                if (svg) {
+                    gsap.to(svg, {
+                        rotation: 0,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                }
+            };
+
+            btn.addEventListener('mouseenter', handleMouseEnter);
+            btn.addEventListener('mouseleave', handleMouseLeave);
+        });
+    }, []);
+
     return (
         <>
-            <section className="hero !h-screen">
+            <section className="hero !h-screen" ref={heroRef}>
                 <div className="hero-container">
-                    <div className="hero-title">
+                    <div className="hero-title" ref={titleRef}>
                         <p className="hero-main-text">Full Stack Developer With A Passion For The backend</p>
                     </div>
 
-                    <div className="hero-description w-[90%]">
+                    <div className="hero-description w-[90%]" ref={descriptionRef}>
                         {
                             isMobile ? (<p>
                                 I build complete web apps, from responsive UIs to scalable backend systems. Specializing in {
@@ -76,7 +250,7 @@ const Hero = () => {
                     </div>
 
                     <div className="hero-actions">
-                        <div className="hero-buttons">
+                        <div className="hero-buttons" ref={buttonsContainerRef}>
                             <button className="available-for-btn">
                                 <div className="available-circle">
                                     <div className="available-dot"></div>
@@ -91,11 +265,10 @@ const Hero = () => {
                                         <span>Resume</span>
                                     </div>
                                 </Link>
-
                             </div>
                         </div>
 
-                        <div className="hero-contacts">
+                        <div className="hero-contacts" ref={contactsRef}>
                             <div className="links-button-container">
                                 <Link href={'https://www.linkedin.com/in/tahmied/'}>
                                     <button className="links-button flex-center">
@@ -232,7 +405,6 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-
         </>
     );
 };

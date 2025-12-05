@@ -213,7 +213,6 @@ a {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   position: relative;
   cursor: pointer;
-  animation: pulse 2s infinite ease-in-out;
   overflow: hidden;
 }
 
@@ -400,6 +399,12 @@ a {
     margin: 0 auto;
   }
 
+}
+
+@media (max-width:325px) {
+  .available-for-btn {
+    font-size: 14px !important;
+  }
 }
 
 /* projects section */

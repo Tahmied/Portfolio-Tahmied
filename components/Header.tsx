@@ -106,7 +106,7 @@ export default function Header() {
                   All Projects
                 </Link>
               </li>
-              <li className="list-none">
+              {/* <li className="list-none">
                 <Link
                   href="/blog"
                   className={`nav-item-underline relative block px-0 py-2 text-[0.95rem] font-medium tracking-[1.2px] uppercase cursor-pointer transition-colors duration-300 ease-in-out ${pathname === '/blog' ? 'text-white' : 'text-[#b0b0b0] hover:text-white'
@@ -114,7 +114,7 @@ export default function Header() {
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
@@ -175,11 +175,11 @@ export default function Header() {
               All Projects
             </Link>
           </li>
-          <li className="text-[1.2em]">
+          {/* <li className="text-[1.2em]">
             <Link href="/blog" onClick={closeMenu} className="text-white no-underline">
               Blog
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

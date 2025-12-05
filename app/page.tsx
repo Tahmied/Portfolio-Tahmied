@@ -1,6 +1,6 @@
 'use client'
 
-import Blog from "@/components/Homepage/Blog"
+// import Blog from "@/components/Homepage/Blog"
 import Cta from "@/components/Homepage/Cta"
 import Experience from "@/components/Homepage/Experience"
 import Experiments from "@/components/Homepage/Experiments"
@@ -27,7 +27,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Experience />
-      <Blog />
+      {/* <Blog /> */}
       <Experiments />
       <Cta openContact={openContact} />
       <Footer />

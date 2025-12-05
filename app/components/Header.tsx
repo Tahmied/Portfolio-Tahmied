@@ -29,7 +29,7 @@ export default function Header() {
             <p className="logo-text">Tahmied</p>
           </Link>
           <nav>
-            <ul className="nav-list">
+            <ul className="nav-list list-none bg-red">
               <li>
                 <Link href="/" className={`nav-item ${pathname === '/' ? 'active' : ''}`}>
                   Home
@@ -53,7 +53,7 @@ export default function Header() {
       <div className={`darken-effect ${menuOpen ? 'active' : ''}`} onClick={closeMenu}></div>
       <div className="mobile-header">
         <div className="mobile-header-container">
-          <Link href="/" className="logo">
+          <Link href="/" className="logo no-underline">
             <img src="/media/dp.png" alt="" className="logo-image" />
             <p className="logo-text">Tahmied</p>
           </Link>
@@ -74,7 +74,7 @@ export default function Header() {
       </div>
 
       <div className={`mobile-menu-sidebar ${menuOpen ? 'active' : ''}`}>
-        <ul className="mobile-menu-nav">
+        <ul className="mobile-menu-nav list-none">
           <li className="mobile-nav-item">
             <Link href="/" onClick={closeMenu}>Home</Link>
           </li>

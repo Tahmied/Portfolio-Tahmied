@@ -33,12 +33,12 @@ const Skills = () => {
                                 </div>
                                 <span>JavaScript</span>
                             </div>
-                            <div className="icon-label">
+                            {/* <div className="icon-label">
                                 <div className="icon-wrapper">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
                                 </div>
                                 <span>PHP</span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -65,6 +65,20 @@ const Skills = () => {
                                 </div>
                                 <span>JavaScript</span>
                             </div>
+                            <div className="icon-label">
+                                <div className="icon-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                                </div>
+                                <span>React</span>
+                            </div>
+                            <div className="icon-label">
+                                <div className="icon-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+                                </div>
+                                <span>Next.js</span>
+                            </div>
+
+
                         </div>
                     </div>
 
@@ -73,12 +87,12 @@ const Skills = () => {
                         <h3><i className="fas fa-database"></i> Database Management</h3>
                         <p>Experience with both SQL and NoSQL databases for scalable data storage.</p>
                         <div className="skill-icons">
-                            <div className="icon-label">
+                            {/* <div className="icon-label">
                                 <div className="icon-wrapper">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
                                 </div>
                                 <span>MySQL</span>
-                            </div>
+                            </div> */}
                             <div className="icon-label">
                                 <div className="icon-wrapper">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
@@ -103,7 +117,7 @@ const Skills = () => {
                                 <div className="icon-wrapper">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
                                 </div>
-                                <span>PHP</span>
+                                <span>PHP (Basic)</span>
                             </div>
                         </div>
                     </div>
@@ -121,7 +135,7 @@ const Skills = () => {
                             </div>
                             <div className="icon-label">
                                 <div className="icon-wrapper">
-                                    <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" />
                                 </div>
                                 <span>Canva</span>
                             </div>

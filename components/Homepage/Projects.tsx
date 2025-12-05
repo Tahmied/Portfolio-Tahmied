@@ -64,33 +64,35 @@ const Projects = () => {
                     </div>
                 </div>
 
-                {/* Third project: 2fr 1fr */}
                 <div className="projects-container">
-                    <div id="large-project-container3" className="project-item">
+                    <div id="large-project-container" className="project-item">
                         <div id="large-project-media2" className="project-media-container">
                             <div className="project-media">
-                                <video loop autoPlay muted id="large-video">
-                                    <source src="/media/ProjectVideos/AI hospital.webm" type="video/webm" />
+                                <video loop autoPlay muted id="large-video2">
+                                    <source src="/media/ProjectVideos/Mentor.webm" type="video/webm" />
                                 </video>
                             </div>
                         </div>
                         <div className="project-details">
-                            <p className="project-company">Ai Hospital</p>
+                            <p className="project-company">Mentor</p>
                             <p className="project-descriptions">
-                                The Front end of of AI Hospital
+                                A full online learning platform website
                             </p>
                         </div>
                     </div>
-                    <div id="small-project-container3" className="project-item">
-                        <div id="small-project-media3" className="project-media-container">
-                            <video loop autoPlay muted id="horizontal-video3" src="/media/locker-prototype.mp4"></video>
+                    <div id="small-project-container" className="project-item">
+                        <div id="small-project-media" className="project-media-container">
+                            <video loop autoPlay muted id="horizontal-video">
+                                <source src="/media/ProjectVideos/mentor-mobile.webm" type="video/webm" />
+                            </video>
                         </div>
                         <div className="project-details">
-                            <p className="project-company">Interest</p>
-                            <p className="project-descriptions">Created My own version of pinterest</p>
+                            <p className="project-company">Mentor Mobile</p>
+                            <p className="project-descriptions">The experience mobile users get</p>
                         </div>
                     </div>
                 </div>
+
             </section>
         </>
 

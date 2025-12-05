@@ -14,16 +14,24 @@ import './globals.css'
 
 export default function Home() {
   const [loading, isLoading] = useState(true)
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => {
-      const mainContent = document.getElementById('main-content')
-      if (mainContent) {
-        mainContent.classList.remove('blurred')
-      }
-    }, 500)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 900);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+
     setTimeout(() => {
       isLoading(false)
-    }, 1500)
+    }, 500)
 
   }, [])
 
@@ -36,18 +44,44 @@ export default function Home() {
             <p className="hero-main-text">Full Stack Developer With A Passion For The backend</p>
           </div>
 
-          <div className="hero-description">
-            <p>
-              I build complete web apps, from responsive UIs to scalable backend systems. Specializing in  {!loading && (
-                <Highlighter action="highlight" color="#fdff32">
-                  <span className="text-black">Node.js, Express and MongoDB</span>
-                </Highlighter>
-              )}{" "} with solid frontend skills With {!loading && (
-                <Highlighter action="underline" color="#FF9800">
-                  <span className="text-white">React and NextJs.</span>
-                </Highlighter>
-              )}
-            </p>
+          <div className="hero-description w-[90%]">
+            {
+              isMobile ? (<p>
+                I build complete web apps, from responsive UIs to scalable backend systems. Specializing in {
+                  loading ? ('Node.js') : (
+                    <Highlighter action="highlight" color="#fdff32"><span className="text-black">Node.js</span></Highlighter>
+                  )
+                }, {
+                  loading ? (<span>Express and MongoDB</span>) : (
+                    <Highlighter action="highlight" color="#fdff32">
+                      <span className="text-black">Express and MongoDB</span>
+                    </Highlighter>
+                  )
+                } with solid frontend skills With {
+                  loading ? ('React and NextJs.') : (
+                    <Highlighter action="underline" color="#FF9800">
+                      <span className="text-white">React and NextJs.</span>
+                    </Highlighter>
+                  )
+                }
+              </p>) : (
+                <p>
+                  I build complete web apps, from responsive UIs to scalable backend systems. Specializing in  {
+                    loading ? (<span>Node.js, Express and MongoDB</span>) : (
+                      <Highlighter action="highlight" color="#fdff32">
+                        <span className="text-black">Node.js, Express and MongoDB</span>
+                      </Highlighter>
+                    )
+                  } with solid frontend skills With {
+                    loading ? ('React and NextJs.') : (
+                      <Highlighter action="underline" color="#FF9800">
+                        <span className="text-white">React and NextJs.</span>
+                      </Highlighter>
+                    )
+                  }
+                </p>
+              )
+            }
           </div>
 
           <div className="hero-actions">

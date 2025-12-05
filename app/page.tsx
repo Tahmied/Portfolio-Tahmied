@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className="blurred" id="main-content">
       <Header />
-      <section className="hero">
+      <section className="hero !h-screen">
         <div className="hero-container">
           <div className="hero-title">
             <p className="hero-main-text">Full Stack Developer With A Passion For The backend</p>

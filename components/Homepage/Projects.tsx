@@ -64,7 +64,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div className="projects-container">
+                {/* <div className="projects-container">
                     <div id="large-project-container" className="project-item">
                         <div id="large-project-media2" className="project-media-container">
                             <div className="project-media">
@@ -91,7 +91,7 @@ const Projects = () => {
                             <p className="project-descriptions">The experience mobile users get</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </section>
         </>

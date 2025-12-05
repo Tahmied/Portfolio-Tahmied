@@ -621,7 +621,6 @@ video {
   display: flex;
   gap: 2rem;
   position: relative;
-  padding-left: 60px;
 }
 
 
@@ -748,7 +747,6 @@ video {
 
   .experience-item {
     flex-direction: column;
-    padding-left: 50px;
   }
 
   .experience-header {
@@ -758,6 +756,20 @@ video {
 
   .experience-period {
     align-self: flex-start;
+  }
+}
+
+@media (max-width:425px) {
+  .experience-title {
+    font-size: 1rem;
+  }
+
+  .experience-company {
+    font-size: 1rem;
+  }
+
+  .experience-description {
+    font-size: 0.9rem;
   }
 }
 

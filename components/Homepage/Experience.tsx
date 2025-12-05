@@ -18,18 +18,23 @@ const Experience = () => {
 
                         <div className="timeline-content">
                             <div className="experience-header">
-                                <h3 className="experience-title !text-[#4fc3f7]"><i className="fas fa-code !text-[#4fc3f7]"></i> Customer Support Executive</h3>
-                                <span className="experience-period">2023 - 2025</span>
+                                <h3 className="experience-title !text-[#4fc3f7]"><i className="fas fa-code !text-[#4fc3f7]"></i> Web Developer</h3>
+                                <span className="experience-period">Oct 2025 - Present</span>
                             </div>
-                            <h4 className="experience-company"><i className="fas fa-building"></i> Amarhoster Inc.</h4>
+                            <h4 className="experience-company"><i className="fas fa-building"></i> SatisfyHost</h4>
                             <p className="experience-description">
-                                At Amarhoster, I resolved clients&apos; website and hosting issues, provided ongoing site support, and developed custom web solutions, including custom WordPress themes.
+                                I’m responsible for building custom web applications such as their support system, hosting client area, and live
+                                chat platform. I develop and maintain company websites with a strong focus on functionality and user
+                                experience, while also providing technical hosting support and troubleshooting. My work covers full-stack
+                                development using Next.js, the MERN stack and very basic PHP, along with hands-on server management.
+
                             </p>
                             <div className="experience-skills">
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Nodjes, Express, HTML, CSS, JS </span>
+                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Nodjes, Express, React, NextJs </span>
                                 <span className="skill-tag"><i className="fas fa-check-circle"></i> Wordpress, PHP</span>
                                 <span className="skill-tag"><i className="fas fa-check-circle"></i> cPanel, WHMCS, Apache & Nginx basics</span>
                                 <span className="skill-tag"><i className="fas fa-check-circle"></i> Domain & DNS Management</span>
+                                <span className="skill-tag"><i className="fas fa-check-circle"></i> VPS Deployment</span>
                             </div>
                         </div>
                     </div>
@@ -38,41 +43,23 @@ const Experience = () => {
                     <div className="experience-item animated delay-1">
                         <div className="timeline-content">
                             <div className="experience-header">
-                                <h3 className="experience-title"><i className="fas fa-laptop-code"></i> Full Stack Developer</h3>
-                                <span className="experience-period">2020 - 2022</span>
+                                <h3 className="experience-title"><i className="fas fa-laptop-code"></i> Customer Support Executive</h3>
+                                <span className="experience-period">2023 - 2025</span>
                             </div>
-                            <h4 className="experience-company"><i className="fas fa-building"></i> Hostovo </h4>
+                            <h4 className="experience-company"><i className="fas fa-building"></i> Amarhoster </h4>
                             <p className="experience-description">
-                                At Hostovo, I made custom websites using Node.js, Express, and MongoDB. I also created WordPress themes and custom web solutions for their sub‑brands.
+                                At Amarhoster, I managed web servers, resolved customer website issues, and built custom technical solutions.
+                                I also created technology-focused tutorials for their YouTube channel. My work covered full-stack development,
+                                server management, custom WordPress theme development (With the Help of AI), and basic video editing,
+                                content writing, marketing, and social media graphics design.
                             </p>
-                            <div className="experience-skills">
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Node.js</span>
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> MongoDB</span>
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Express</span>
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> VPS Deployment</span>
+                            <div className="experience-skills"> <span className="skill-tag"><i className="fas fa-check-circle"></i> Wordpress, PHP</span>
+                                <span className="skill-tag"><i className="fas fa-check-circle"></i> cPanel, WHM, WHMCS, Apache, Nginx basics</span>
+                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Domain & DNS + Server Management</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Experience 3 */}
-                    <div className="experience-item animated delay-2">
-                        <div className="timeline-content">
-                            <div className="experience-header">
-                                <h3 className="experience-title"><i className="fas fa-graduation-cap"></i> Courses and Other Experiences</h3>
-                                <span className="experience-period">2018 - 2022</span>
-                            </div>
-                            <h4 className="experience-company"><i className="fas fa-building"></i> FreeCodeCamp, ProgrammingHero, SoloLearn, W3Schools</h4>
-                            <p className="experience-description">
-                                I learned to build responsive websites using HTML, CSS, and JavaScript through W3Schools and YouTube tutorials. I studied React and modern frontend workflows using FreeCodeCamp and SoloLearn. Later, the Programming Hero course helped me revise my skills and learn backend development, guiding me to become a full-stack MERN developer by applying everything I had learned.
-                            </p>
-                            <div className="experience-skills">
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> HTML5, CSS3, JavaScript</span>
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Nodejs, React, Express </span>
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> MongoDB </span>
-                                <span className="skill-tag"><i className="fas fa-check-circle"></i> Git & Github </span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

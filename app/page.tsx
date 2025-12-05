@@ -1,11 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
-import Header from './components/Header'
+import { Highlighter } from "@/components/ui/highlighter"
+import { useEffect, useState } from 'react'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import './globals.css'
 
 export default function Home() {
+  const [loading, isLoading] = useState(true)
   useEffect(() => {
     // Blur effect
     setTimeout(() => {
@@ -14,33 +16,10 @@ export default function Home() {
         mainContent.classList.remove('blurred')
       }
     }, 500)
-
-    // Highlight effect
-    document.querySelectorAll('.highlight').forEach((el) => {
-      const text = el.textContent || ''
-      el.innerHTML = Array.from(text)
-        .map((char) =>
-          char === ' '
-            ? ' '
-            : `<span class="letter">${char}</span>`
-        )
-        .join('')
-    })
-
     setTimeout(() => {
-      document.querySelectorAll('.highlight').forEach((el) => {
-        el.classList.add('active')
-        const letters = el.querySelectorAll('.letter')
-        const totalDuration = 1150
-        const delay = totalDuration / letters.length
+      isLoading(false)
+    }, 1500)
 
-        letters.forEach((letter, i) => {
-          setTimeout(() => {
-            letter.classList.add('colored')
-          }, i * delay)
-        })
-      })
-    }, 2000)
   }, [])
 
   return (
@@ -55,7 +34,15 @@ export default function Home() {
 
           <div className="hero-description">
             <p>
-              I build complete web applications — from responsive UIs to scalable backend systems. Specializing in <span className="highlight">Node.js, Express, and MongoDB</span> , with solid frontend skills With <span className="highlight">React</span>.
+              I build complete web apps, from responsive UIs to scalable backend systems. Specializing in  {!loading && (
+                <Highlighter action="highlight" color="#fdff32">
+                  <span className="text-black">Node.js, Express and MongoDB</span>
+                </Highlighter>
+              )}{" "} with solid frontend skills With {!loading && (
+                <Highlighter action="underline" color="#FF9800">
+                  <span className="text-white">React and NextJs.</span>
+                </Highlighter>
+              )}
             </p>
           </div>
 

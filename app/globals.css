@@ -846,13 +846,13 @@ video {
 }
 
 :root {
-  --primary: oklch(0.205 0 0);
+  --primary: #4fc3f7;
   --secondary: oklch(0.97 0 0);
   --accent: oklch(0.97 0 0);
   --text: #e0e0e0;
   --dark-bg: #121a24;
   --card-bg: #1e293b;
-  --highlight: rgba(79, 195, 247, 0.15);
+  --highlight: rgba(0, 174, 255, 0.15);
   --timeline: #2c3e50;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -950,34 +950,6 @@ video {
   padding-left: 60px;
 }
 
-.experience-item::before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 0;
-  height: 100%;
-  width: 2px;
-  background: linear-gradient(to bottom,
-      var(--primary) 0%,
-      var(--secondary) 100%);
-}
-
-.timeline-dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary);
-  color: var(--dark-bg);
-  font-weight: bold;
-  z-index: 1;
-  box-shadow: 0 0 0 4px #313131;
-}
 
 .timeline-content {
   background: #1a1a1a;
@@ -1007,16 +979,16 @@ video {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: var(--primary);
+  color: #4fc3f7;
 }
 
 .experience-title i {
-  color: var(--primary);
+  color: #4fc3f7;
 }
 
 .experience-period {
   background: var(--highlight);
-  color: var(--primary);
+  color: #4fc3f7;
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -2302,6 +2274,7 @@ footer {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

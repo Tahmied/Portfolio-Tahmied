@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import '../globals.css'
 
 export default function Projects() {

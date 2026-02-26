@@ -407,6 +407,12 @@ a {
   }
 }
 
+@media (max-width: 374px) {
+  .hero-main-text {
+    font-size: 1.4em;
+  }
+}
+
 /* projects section */
 .projects {
   max-width: 1600px;

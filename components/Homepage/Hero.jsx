@@ -1,8 +1,7 @@
 'use client'
-import { Highlighter } from "@/components/ui/highlighter";
 import { gsap } from 'gsap';
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 // Initial animation states as CSS — set in JSX so they're invisible
 // from the very first server render / hydration, before any JS runs.
@@ -15,8 +14,6 @@ const INITIAL = {
 };
 
 const Hero = ({ openContact }) => {
-    const [loading, isLoading] = useState(true)
-    const [isMobile, setIsMobile] = useState(false);
     const [showLazyNote, setShowLazyNote] = useState(false);
 
     const heroRef = useRef(null);
@@ -25,18 +22,8 @@ const Hero = ({ openContact }) => {
     const buttonsContainerRef = useRef(null);
     const contactsRef = useRef(null);
 
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 900);
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
-    useEffect(() => {
-        setTimeout(() => isLoading(false), 500);
-    }, []);
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         const timer = setTimeout(() => setShowLazyNote(true), 1800);
         return () => clearTimeout(timer);
     }, []);
@@ -106,47 +93,14 @@ const Hero = ({ openContact }) => {
 
                     {/* opacity:0 in style — invisible from first render, GSAP animates it in */}
                     <div className="hero-title" ref={titleRef} style={INITIAL.title}>
-                        <p className="hero-main-text">Full Stack Developer With A Passion For The backend</p>
+                        <p className="hero-main-text">Full-Stack Developer Building Scalable Solutions</p>
                     </div>
 
                     <div className="hero-description w-[90%]" ref={descriptionRef} style={INITIAL.description}>
-                        {isMobile ? (
-                            <p>
-                                I build complete web apps, from responsive UIs to scalable backend systems. Specializing in {
-                                    loading ? ('Node.js') : (
-                                        <Highlighter action="highlight" color="#fdff32"><span className="text-black"> Node.js</span></Highlighter>
-                                    )
-                                }, {
-                                    loading ? (<span>Express and MongoDB </span>) : (
-                                        <Highlighter action="highlight" color="#fdff32">
-                                            <span className="text-black">Express and MongoDB </span>
-                                        </Highlighter>
-                                    )
-                                } with solid frontend skills With {
-                                    loading ? ('React and NextJs.') : (
-                                        <Highlighter action="underline" color="#FF9800">
-                                            <span className="text-white">React and NextJs.</span>
-                                        </Highlighter>
-                                    )
-                                }
-                            </p>
-                        ) : (
-                            <p>
-                                I build complete web apps, from responsive UIs to scalable backend systems. Specializing in {
-                                    loading ? (<span>Node.js, Express and MongoDB</span>) : (
-                                        <Highlighter action="highlight" color="#fdff32">
-                                            <span className="text-black">Node.js, Express and MongoDB</span>
-                                        </Highlighter>
-                                    )
-                                } with solid frontend skills With {
-                                    loading ? ('React and NextJs.') : (
-                                        <Highlighter action="underline" color="#FF9800">
-                                            <span className="text-white">React and NextJs.</span>
-                                        </Highlighter>
-                                    )
-                                }
-                            </p>
-                        )}
+                        <p>
+                            I'm a Full Stack developer, building production-grade web applications.<br />
+                            Specialized in backend architecture with strong frontend execution.
+                        </p>
                     </div>
 
                     <div className="hero-actions">

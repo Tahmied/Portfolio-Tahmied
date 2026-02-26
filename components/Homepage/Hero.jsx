@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 const Hero = ({ openContact }) => {
     const [loading, isLoading] = useState(true)
     const [isMobile, setIsMobile] = useState(false);
+    const [showLazyNote, setShowLazyNote] = useState(false);
 
     // Refs for GSAP animations
     const heroRef = useRef(null);
@@ -31,6 +32,13 @@ const Hero = ({ openContact }) => {
             isLoading(false)
         }, 500)
     }, [])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowLazyNote(true);
+        }, 1800);
+        return () => clearTimeout(timer);
+    }, []);
 
     // Set initial styles immediately
     useEffect(() => {
@@ -405,6 +413,63 @@ const Hero = ({ openContact }) => {
                     </div>
                 </div>
             </section>
+
+            {/* Lazy Dev Note */}
+            {showLazyNote && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        bottom: '28px',
+                        right: '24px',
+                        zIndex: 9999,
+                        background: '#1a1a1a',
+                        border: '1px solid rgba(255,255,255,0.12)',
+                        borderRadius: '14px',
+                        padding: '14px 18px 14px 16px',
+                        maxWidth: '300px',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.45)',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '10px',
+                        animation: 'lazyNoteIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
+                    }}
+                >
+                    <span style={{ fontSize: '20px', lineHeight: 1, marginTop: '2px' }}>😴</span>
+                    <div style={{ flex: 1 }}>
+                        <p style={{
+                            margin: 0,
+                            fontSize: '13px',
+                            lineHeight: '1.5',
+                            color: 'rgba(255,255,255,0.75)',
+                            fontFamily: 'inherit',
+                        }}>
+                            <span style={{ color: '#fff', fontWeight: 600 }}>Last updated: 2021.</span>
+                            {' '}I'm too lazy to update this. Maybe someday. 😐
+                        </p>
+                    </div>
+                    <button
+                        onClick={() => setShowLazyNote(false)}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'rgba(255,255,255,0.35)',
+                            cursor: 'pointer',
+                            fontSize: '16px',
+                            lineHeight: 1,
+                            padding: '0 0 0 4px',
+                            marginTop: '1px',
+                            flexShrink: 0,
+                        }}
+                        aria-label="Dismiss"
+                    >✕</button>
+                </div>
+            )}
+            <style>{`
+                @keyframes lazyNoteIn {
+                    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+                    to   { opacity: 1; transform: translateY(0)   scale(1); }
+                }
+            `}</style>
         </>
     );
 };

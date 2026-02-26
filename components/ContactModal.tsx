@@ -1,8 +1,8 @@
 'use client';
 
+import { Check, Send, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { X, Check, Send } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface ContactModalProps {
     isOpen: boolean;
@@ -61,9 +61,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                             boxShadow: "0 0 40px rgba(79, 195, 247, 0.15)"
                         }}
                     >
-                        {/* Decorative gradient blob */}
-                        <div className="!absolute !-top-20 !-right-20 !w-60 !h-60 !bg-[#4fc3f7]/20 !rounded-full !blur-3xl !pointer-events-none" />
-                        <div className="!absolute !-bottom-20 !-left-20 !w-60 !h-60 !bg-purple-500/10 !rounded-full !blur-3xl !pointer-events-none" />
+
 
                         {/* Close Button */}
                         <button
@@ -82,7 +80,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: 20 }}
                                     >
-                                        <h2 className="!text-4xl !font-bold !mb-3 !bg-gradient-to-r !from-[#4fc3f7] !to-white !bg-clip-text !text-transparent !inline-block">
+                                        <h2 className="!text-4xl !font-bold !mb-3 !text-white">
                                             Let's Talk
                                         </h2>
                                         <p className="!text-gray-400 !mb-8 !text-lg">

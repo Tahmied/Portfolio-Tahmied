@@ -33,12 +33,12 @@ const Skills = () => {
                                 </div>
                                 <span>JavaScript</span>
                             </div>
-                            {/* <div className="icon-label">
+                            <div className="icon-label">
                                 <div className="icon-wrapper">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
                                 </div>
                                 <span>PHP</span>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
 
@@ -104,8 +104,8 @@ const Skills = () => {
 
                     {/* WordPress */}
                     <div className="skill-card">
-                        <h3><i className="fab fa-wordpress"></i> WordPress Theme Development</h3>
-                        <p>Custom WordPress themes from scratch to advanced, using PHP and best practices.</p>
+                        <h3><i className="fab fa-wordpress"></i> WordPress Development</h3>
+                        <p>Custom WordPress themes and plugins from scratch, using PHP and WordPress best practices.</p>
                         <div className="skill-icons">
                             <div className="icon-label">
                                 <div className="icon-wrapper">
@@ -117,7 +117,21 @@ const Skills = () => {
                                 <div className="icon-wrapper">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
                                 </div>
-                                <span>PHP (Basic)</span>
+                                <span>PHP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* C++ / Systems */}
+                    <div className="skill-card">
+                        <h3><i className="fas fa-microchip"></i> Systems Programming</h3>
+                        <p>Low-level programming and algorithmic problem solving with C++.</p>
+                        <div className="skill-icons">
+                            <div className="icon-label">
+                                <div className="icon-wrapper">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                                </div>
+                                <span>C++</span>
                             </div>
                         </div>
                     </div>
